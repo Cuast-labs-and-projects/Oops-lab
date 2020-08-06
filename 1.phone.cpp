@@ -19,7 +19,7 @@ int main() {
     first.num = 8900;
     cout << "Enter your area code, exchange, and number: ";
     cin >>  second.area >> second.exchange >> second.num;
-    cout << "initialized number is" << ph_to_string(first);
-    cout << "The entered no is is " << ph_to_string(second);
+    cout << "initialized number is " << ph_to_string(first);
+    cout << "The entered no is " << ph_to_string(second);
     return 0;
 }

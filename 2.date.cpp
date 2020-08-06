@@ -24,7 +24,7 @@ void Date :: initialize(string input_date)
     day = stoi(input_date.substr(0, 2));
     month = stoi(input_date.substr(3, 5));
     year = stoi(input_date.substr(6, input_date.length()));
-    cout<<day<<month<<year;
+  
  
 }
 bool Date :: isLeap() 
@@ -113,7 +113,7 @@ string Date ::nextdate()
 			m += 1;
 		}
 	}
-	if (d == 31)	//last day of the month
+	else if (d == 31)	//last day of the month
 	{
 		d = 1;
 		if (m == 12)	//checking for last day of the year
@@ -135,13 +135,13 @@ int main()
    
    string date;
 
-   cout<<"enter the date"<<endl;
+   cout<<"enter the date(dd/mm/yyyy)"<<endl;
    cin>>date;
    
    d1.initialize(date);
    if(d1.isvalid())
    {
-       cout<<date<<","<<"valid"<<","<<"vnext date :"<<d1.nextdate();
+       cout<<date<<","<<"valid"<<","<<"next date :"<<d1.nextdate();
    }
    else
    {
