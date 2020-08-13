@@ -10,6 +10,7 @@ private:
     string type;
     float balance;
 
+
 public:
     void setValues(string inpName, string intType)
     {
@@ -35,14 +36,18 @@ public:
         else if (amount > balance) {
             cout << "Not enough balance\n";
         }
+        else if(balance-amount<=800){
+            cout<<"you need a minimum balance of 800";
+        }
         else {
             balance -= amount;
         }
     }
 
     void display() {
-        cout << "Name: " << name << "\nBalance: " << balance << endl;
+        cout <<"\nAccount no: " << no<< "\nName: " << name << "\nBalance: " << balance << "\naccount type:" << type<<endl;
     }
+
 };
 
 void displayMenu() {
@@ -50,7 +55,7 @@ void displayMenu() {
 }
 
 int main()
-{
+{   
     string name;
     string type;
     Account account;
@@ -71,11 +76,18 @@ int main()
             case 1:
                 cout << "Enter amount to be deposited: ";
                 cin >> amount;
+                if(amount>1000)
                 account.deposit(amount);
+                else
+                {
+                  cout<<"you need more than 1000 to start a deposit";
+                }
+                
                 break;
             case 2:
                 cout << "Enter amount to be withdrawn: ";
                 cin >> amount;
+            
                 account.withdraw(amount);
                 break;
             case 3:
