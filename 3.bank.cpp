@@ -37,7 +37,7 @@ public:
             cout << "Not enough balance\n";
         }
         else if(balance-amount<=800){
-            cout<<"you need a minimum balance of 800";
+            cout<<"you need a minimum balance of 800 ";
         }
         else {
             balance -= amount;
@@ -80,7 +80,7 @@ int main()
                 account.deposit(amount);
                 else
                 {
-                  cout<<"you need more than 1000 to start a deposit";
+                  cout<<"you need more than 1000 to start a deposit ";
                 }
                 
                 break;
