@@ -6,8 +6,15 @@ class swapper{
     public:
       int a;
       int b;
+    void getdata();
 
 };
+void swapper::getdata(){
+    cout<<"enter the first number"<<endl;
+    cin>>this->a;
+    cout<<"enter the second number"<<endl;
+    cin>>this->b;
+}
 
 void swap(int* x, int* y) 
 { 
@@ -33,9 +40,8 @@ void swapv(int x,int y)
 int main() 
 {   
     swapper obj;
-    obj.a=45,obj.b=35;
+    obj.getdata();
     cout<<"call by address"<<endl;
-	// int a = 45, b = 35; 
 	cout <<"Before Swap\n"; 
 	cout <<"a = " << obj.a << " b = " << obj.b << "\n"; 
 

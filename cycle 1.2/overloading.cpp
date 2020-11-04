@@ -5,7 +5,7 @@ using namespace std;
 void power(float a, float n)
 {
     
-    cout<<"float int  function"<<endl;
+    cout<<"float float  function"<<endl;
     cout<<pow(a,n)<<endl;
 }
 void power(double a,int n)
