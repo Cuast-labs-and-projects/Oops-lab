@@ -96,6 +96,8 @@ using namespace std;
         obj3.sort();
         cout<<"the sorted array is"<<endl;
         obj3.show();
+        cout<<"new average is"<<endl;
+        cout<<obj3.find_average()<<endl;
 
 
 
