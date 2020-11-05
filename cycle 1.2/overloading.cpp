@@ -28,6 +28,11 @@ void power(long a,int n)
     cout<<"long int function"<<endl;
     cout<<pow(a,n)<<endl;
 }
+void power(char a,int n)
+{   
+    cout<<"char int function"<<endl;
+    cout<<pow(a,n)<<endl;
+}
 
 
 
@@ -51,7 +56,10 @@ int main(){
   power(.5,.5);
   cout<<endl;
 
+  power('a',2);
+  cout<<endl;
+
   
-  cout<<"endl";
+  
 
 }
