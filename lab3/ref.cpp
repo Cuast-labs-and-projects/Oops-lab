@@ -1,40 +1,31 @@
-# include <iostream>
-# include <math.h>
+#include <iostream>
+#include <fstream>
+#include <vector>
 
 using namespace std;
 
-class Any{
-  
-private:
-   int var1;
-   int var2;
-public:
-    Any(){};
-    Any(int , int );
-    ~Any();
-    void show();
-    int getdata(){
-        return var1;
+int main()
+{
+    ifstream in("input.txt");
+    vector<int>a;
+    int  temp;
+    int i = 0;
+    while (in >> temp)
+    {   
+        
+        a.push_back(temp);
+        i++;
     }
-};
-
-Any::Any(int a ,int b)
-{
-    this->var1=a;
-    this->var2=b;
-}
-
-Any::~Any()
-{
-}
-void Any::show(){
-    
-    cout<<var1<<endl;
-    cout<<var2<<endl;
-
-}
-
-int main(){
-    
+    in.close();
+    cout << i<<endl;
+    for (int j = 0; j < i; j++)
+    {
+        for (int k = j + 1; k < i; k++)
+        {
+            if (a[j] + a[k] == 2020)
+                cout << a[j] * a[k];
+        }
+    }
     return 0;
 }
+
