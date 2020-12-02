@@ -16,10 +16,7 @@ public:
         this->emp_no = emp_no;
         this->pay_rate = 0;
     }
-    virtual void pay()
-    {
-       
-    }
+    virtual void pay(int a)=0;
 };
 
 class Manager : Employee
