@@ -51,11 +51,11 @@ protected:
         return false;
     }
 
-    void nextDateHelper(int *tempDay, int *tempMonth, int maxDays, int *tempYear,int n)
+    void nextDateHelper(int *tempDay, int *tempMonth, int maxDays, int *tempYear)
     {
-        if (day +n>= maxDays)
+        if (day + 1 > maxDays)
         {
-            *tempDay = (day+n)-maxDays;
+            *tempDay = (day + 1) - maxDays;
             *tempMonth = (month % 12) + 1;
             if (month == 12)
             {
@@ -68,17 +68,10 @@ protected:
         }
         else
         {
-            *tempDay = day + n;
+            *tempDay = day + 1;
             *tempMonth = month;
             *tempYear = year;
         }
-    }
-
-    void setDate(int d, int m, int y)
-    {
-        day = d;
-        month = m;
-        year = y;
     }
 
     bool isDateValid()
@@ -99,7 +92,7 @@ protected:
         return (isDay && isMonth && isYear && isFebValid);
     }
 
-    void nextDate(int n)
+    void nextDate()
     {
         if (!isDateValid())
         {
@@ -114,20 +107,20 @@ protected:
         {
             if (isLeapYear())
             {
-                nextDateHelper(&tempDay, &tempMonth, 29, &tempYear,n);
+                nextDateHelper(&tempDay, &tempMonth, 29, &tempYear);
             }
             else
             {
-                nextDateHelper(&tempDay, &tempMonth, 28, &tempYear,n);
+                nextDateHelper(&tempDay, &tempMonth, 28, &tempYear);
             }
         }
         else if (isThirty())
         {
-            nextDateHelper(&tempDay, &tempMonth, 30, &tempYear,n);
+            nextDateHelper(&tempDay, &tempMonth, 30, &tempYear);
         }
         else
         {
-            nextDateHelper(&tempDay, &tempMonth, 31, &tempYear,n);
+            nextDateHelper(&tempDay, &tempMonth, 31, &tempYear);
         }
         this->day=tempDay;
         this->month=tempMonth;
@@ -147,7 +140,10 @@ class Date:public Date_ref{
       cout<<day<<"/"<<month<<"/"<<year<<endl;
   }
   void operator + (int a){
-      this->nextDate(a);
+      for(int i=0;i<a;i++){
+         this->nextDate();
+      }
+      
   }
   
 };
@@ -157,8 +153,7 @@ int main()
     Date obj, new_obj;
     int a = 5;
     obj.getdata();
-    // string next_date=obj.nextDate(a);
-    // cout<<next_date;
+
 
     cout << "The entered date is : ";
     obj.showdata();

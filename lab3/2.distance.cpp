@@ -51,7 +51,7 @@ int main()
   dist d1,d2,d3;
   cout<<"Enter the first dist"<<endl;
   d1.getdist();
-  cout<<"Enter the first dist"<<endl;
+  cout<<"Enter the second dist"<<endl;
   d2.getdist();
   if(d1<d2)
     cout<<"d1 is smaller than d2"<<endl;

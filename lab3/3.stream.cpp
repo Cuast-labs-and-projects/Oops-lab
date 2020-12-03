@@ -18,8 +18,8 @@ public:
 
 ostream &operator<<(ostream &output, Complex &temp)
 {
-    output << "\n Entered Complex Number: \n"
-           << temp.real << " + i" << temp.img;
+    output << "\n Entered Complex Number: "
+           << temp.real  <<" + "<< temp.img<< "i ";
     return output;
 }
 istream &operator>>(istream &input, Complex &temp)
@@ -36,5 +36,6 @@ int main()
     Complex C;
     cin >> C;
     cout << C;
+    cout<<endl;
     return 0;
 }

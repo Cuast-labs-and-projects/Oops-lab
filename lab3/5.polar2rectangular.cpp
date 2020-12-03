@@ -55,5 +55,6 @@ int main()
     Rectangular R;
     R = P;
     R.show();
+    cout<<endl;
     return 0;
 }

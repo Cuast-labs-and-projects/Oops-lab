@@ -142,7 +142,7 @@ int main()
 
     while(1)
     {
-        cout << "Choose Programme :: \n";
+        cout << "Choose Programme : \n";
         cout << "1. B.Tech \n";
         cout << "2. M.Tech \n";
         cout << "Enter 0 to EXIT \n";
